@@ -1,35 +1,10 @@
 package com.coolcoder.java8.stream.demo;
 
+import java.util.List;
+import java.util.Objects;
+
 public class Employee {
 	
-	private Integer id;
-	
-	private String name;
-	
-	private String gender;
-	
-	private Double salary;
-	
-	private Boolean isActice;
-	
-	private String deptName;
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + ", isActice="
-				+ isActice + ", deptName=" + deptName + "]";
-	}
-
-	public Employee(Integer id, String name, String gender, Double salary, Boolean isActice, String deptName) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.gender = gender;
-		this.salary = salary;
-		this.isActice = isActice;
-		this.deptName = deptName;
-	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -77,5 +52,66 @@ public class Employee {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
+
+	public List<String> getSkilSet() {
+		return skilSet;
+	}
+
+	public void setSkilSet(List<String> skilSet) {
+		this.skilSet = skilSet;
+	}
+
+	private Integer id;
+	
+	private String name;
+	
+	private String gender;
+	
+	private Double salary;
+	
+	private Boolean isActice;
+	
+	private String deptName;
+	
+	private List<String> skilSet;
+
+	public Employee(Integer id, String name, String gender, Double salary, Boolean isActice, String deptName,
+			List<String> skilSet) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.salary = salary;
+		this.isActice = isActice;
+		this.deptName = deptName;
+		this.skilSet = skilSet;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(deptName, gender, id, isActice, name, salary, skilSet);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return Objects.equals(deptName, other.deptName) && Objects.equals(gender, other.gender)
+				&& Objects.equals(id, other.id) && Objects.equals(isActice, other.isActice)
+				&& Objects.equals(name, other.name) && Objects.equals(salary, other.salary)
+				&& Objects.equals(skilSet, other.skilSet);
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + ", isActice="
+				+ isActice + ", deptName=" + deptName + ", skilSet=" + skilSet + "]";
+	}
+	
 
 }

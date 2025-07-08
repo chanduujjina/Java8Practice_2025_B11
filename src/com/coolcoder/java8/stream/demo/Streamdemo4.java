@@ -1,6 +1,7 @@
 package com.coolcoder.java8.stream.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -72,21 +73,23 @@ public class Streamdemo4 {
 		
 		System.out.println(sortedList);
 		
+		
+		
 	}
 	
 	
 	private static List<Employee> getEmployeeList(){
 		
 		List<Employee> employeeList = new ArrayList<>();
-		employeeList.add(new Employee(1, "chandu", "male", 100000d, true, "it"));
-		employeeList.add(new Employee(2, "sabitha", "female", 50000d, true, "it"));
-		employeeList.add(new Employee(3, "sudhakar", "male", 200000d, true, "admin"));
-		employeeList.add(new Employee(4, "ganesh", "male", 300000d, true, "finance"));
-		employeeList.add(new Employee(5, "hemanth", "male", 400000d, true, "it"));
-		employeeList.add(new Employee(6, "abhiRam", "male", 600000d, true, "HR"));
-		employeeList.add(new Employee(9, "vinod", "male", 600000d, false, "HR"));
-		employeeList.add(new Employee(7, "raju", "male", 600000d, false, "HR"));
-		employeeList.add(new Employee(8, "vikas", "male", 600000d, false, "HR"));
+		employeeList.add(new Employee(1, "chandu", "male", 100000d, true, "it",Arrays.asList("scala","python","java","typescript")));
+		employeeList.add(new Employee(2, "sabitha", "female", 50000d, true, "it",Arrays.asList(".net","java","typescript")));
+		employeeList.add(new Employee(3, "sudhakar", "male", 200000d, true, "admin",Arrays.asList("react","java","typescript")));
+		employeeList.add(new Employee(4, "ganesh", "male", 300000d, true, "finance",Arrays.asList("backbone","java","typescript")));
+		employeeList.add(new Employee(5, "hemanth", "male", 400000d, true, "it",Arrays.asList("view","java","typescript")));
+		employeeList.add(new Employee(6, "abhiRam", "male", 600000d, true, "HR",Arrays.asList("ejb","java","typescript")));
+		employeeList.add(new Employee(9, "vinod", "male", 600000d, false, "HR",Arrays.asList("jsx","java","typescript")));
+		employeeList.add(new Employee(7, "raju", "male", 600000d, false, "HR",Arrays.asList("ESX","java","typescript")));
+		employeeList.add(new Employee(8, "vikas", "male", 600000d, false, "HR",Arrays.asList("mainframe","java","typescript")));
 		
 		
 		return employeeList;
